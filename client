@@ -1,1 +1,6 @@
-
+client/
+├── src/
+├── public/
+├── package.json
+├── vite.config.js
+└── index.html
