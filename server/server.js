@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
+import movieRoutes from "./routes/movieRoutes.js";
 
 dotenv.config();
 
@@ -16,11 +17,13 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
+    success: true,
     message: "Arslan Movie Hub API Running"
   });
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/movies", movieRoutes);
 
 const PORT = process.env.PORT || 5000;
 
